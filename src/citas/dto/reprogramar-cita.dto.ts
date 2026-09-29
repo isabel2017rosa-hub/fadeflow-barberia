@@ -1,0 +1,1 @@
+import { IsDateString, IsOptional, IsUUID, Matches } from 'class-validator'; export class ReprogramarCitaDto { @IsDateString() fecha!:string; @Matches(/^([01]\d|2[0-3]):[0-5]\d$/) hora!:string; @IsOptional() @IsUUID() barberoId?:string; }

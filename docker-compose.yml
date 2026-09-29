@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: barberia-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: barberia_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - barberia_pgdata:/var/lib/postgresql/data
+
+volumes:
+  barberia_pgdata:

@@ -1,0 +1,2 @@
+import { IsEnum, IsNumber, IsOptional, IsString, IsUUID, Min } from 'class-validator'; import { MetodoPago } from '../../common/enums/metodo-pago.enum'; import { EstadoPago } from '../../common/enums/estado-pago.enum';
+export class CreatePagoDto { @IsUUID() citaId!:string; @IsNumber({maxDecimalPlaces:2}) @Min(0) monto!:number; @IsEnum(MetodoPago) metodoPago!:MetodoPago; @IsOptional() @IsEnum(EstadoPago) estado?:EstadoPago; @IsOptional() @IsString() referencia?:string; }

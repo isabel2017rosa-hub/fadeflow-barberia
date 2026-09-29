@@ -1,0 +1,2 @@
+import { IsArray, IsDateString, IsOptional, IsString, IsUUID, Matches, ArrayMinSize } from 'class-validator';
+export class CreateCitaDto { @IsUUID() clienteId!: string; @IsUUID() barberoId!: string; @IsDateString() fecha!: string; @Matches(/^([01]\d|2[0-3]):[0-5]\d$/, {message:'La hora debe tener formato HH:mm.'}) hora!: string; @IsArray() @ArrayMinSize(1) @IsUUID('4',{each:true}) servicioIds!: string[]; @IsOptional() @IsString() observaciones?: string; }
